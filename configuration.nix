@@ -16,7 +16,7 @@
 
 	
 	networking = { 
-		hostName = "nixos";
+		hostName = "nixos-btw";
 		networkmanager.enable = true;
 		};
 
