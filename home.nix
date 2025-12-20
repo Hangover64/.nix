@@ -6,6 +6,13 @@
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
 
+
+  programs.git = {
+  	enable = true;
+	userName = "Hangover64";
+	userEmail = "hendrikfarnkopf@pm.me";
+	};
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
