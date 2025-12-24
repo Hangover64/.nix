@@ -6,10 +6,10 @@ bold = { family = "JetBrains Mono Nerd Font", style = "Bold" }
 italic = { family = "JetBrains Mono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrains Mono Nerd Font", style = "Bold Italic" }
 
-size = 13
+size = 14
 
 [window]
-opacity = 0.4
+opacity = 0.1
 
 [window.padding]
 x = 4
