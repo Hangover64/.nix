@@ -103,6 +103,7 @@
 	tree
 	nerd-fonts.jetbrains-mono
 	btop
+	dysk
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
