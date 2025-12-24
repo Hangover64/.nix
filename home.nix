@@ -7,7 +7,12 @@
   home.homeDirectory = "/home/hendrikf";
   
   #dotfiles
-
+  programs.bash = {
+  	enable = true;
+	initExtra = ''
+		eval "$(starship init bash)"
+	'';
+  };
   programs.neovim = {
 	enable = true;
 	viAlias = true;
@@ -92,6 +97,7 @@
 	kdePackages.spectacle
 	tree
 	nerd-fonts.jetbrains-mono
+	btop
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
