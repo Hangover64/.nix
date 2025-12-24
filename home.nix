@@ -93,7 +93,7 @@
 	kdePackages.kwin
 	kdePackages.spectacle
 	tree
-	(pkgs.nerd-fonts.override { fonts = ["JetBrainsMono"]; })
+	nerd-fonts.jetbrains-mono
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
