@@ -18,6 +18,7 @@
 	networking = { 
 		hostName = "nixos-btw";
 		networkmanager.enable = true;
+		nftables.enable = true;
 		};
 
 
@@ -51,6 +52,8 @@
 
 	services.printing.enable = true;
 
+	services.firewalld.enable = true;
+		
 	services.pulseaudio.enable = false;
 	security.rtkit.enable = true;
 	services.pipewire = {
@@ -83,30 +86,31 @@
 	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
-			neovim 
+			#editor and commands
 			wget
 			zip
 			unzip
 			alacritty
-			git
 			protonvpn-gui
+			#developement
 			python315
 			python313Packages.pydbus
-			dbus
 			gcc
 			glibc.static
 			nil
 			xdg-desktop-portal
-			xdg-desktop-portal-cosmic
+			dbus
 			clang-tools
+			nftables
 			#Hyprland
 			xdg-desktop-portal-hyprland
 			hyprpaper
+			hyprshot
 			hyprlock
 			hypridle
 			wofi
-			waybar
 			brightnessctl
+
 					
 
 			];

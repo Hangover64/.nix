@@ -5,12 +5,48 @@
   # manage.
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
+  
+  #dotfiles
 
-
+  programs.neovim = {
+	enable = true;
+	viAlias = true;
+	vimAlias = true;
+  };
+  xdg.configFile."nvim".source = ./dotfiles/nvim;
+  
   programs.git = {
   	enable = true;
-	userName = "Hangover64";
-	userEmail = "hendrikfarnkopf@pm.me";
+	settings.user.name = "Hangover64";
+	settings.user.email = "hendrikfarnkopf@pm.me";
+	};
+  programs.waybar = {
+  	enable = true;
+	settings.main = {
+	
+		mainBar = {
+			layer = "top";
+			position = "top";
+			height = 60;
+			output = ["eDP-1"];
+			modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
+			modules-center = [ "sway/window" "custom/hello-from-waybar" ];
+			modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
+
+			"sway/workspaces" = {
+				disable-scroll = true;
+				all-outputs = true;
+			};
+			"custom/hello-from-waybar" = {
+				format = "hello {}";
+				max-length = 40;
+				interval = "once";
+				exec = pkgs.writeShellScript "hello-from-waybar" ''
+					echo "from within waybar"
+					'';
+			};
+		};
+		};
 	};
 
   # This value determines the Home Manager release that your configuration is
