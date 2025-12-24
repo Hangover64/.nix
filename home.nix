@@ -82,6 +82,7 @@
 	antigravity
 	kdePackages.kwin
 	kdePackages.spectacle
+	tree
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly

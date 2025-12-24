@@ -1,4 +1,4 @@
-require("config.lazy")
-require("config.settings")
-require("config.keymap")
-require("config.lsp")
+require("lua.lazy")
+require("lua.settings")
+require("lua.keymap")
+require("lua.lsp")
