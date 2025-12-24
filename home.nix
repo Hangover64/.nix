@@ -22,7 +22,7 @@
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
 
   #starship
-  program.starship = {
+  programs.starship = {
   	enable = true;
 	settings = {
 	add_newline = false;
