@@ -13,6 +13,10 @@
 		eval "$(starship init bash)"
 	'';
   };
+
+  programs.alacritty = {
+  	enable = true;
+	};
   programs.neovim = {
 	enable = true;
 	viAlias = true;
@@ -25,6 +29,7 @@
   };
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
+  xdg.configFile."alacritty".source = ./dotfiles/alacritty;
 
   #starship
   programs.starship = {
