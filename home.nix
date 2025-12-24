@@ -12,6 +12,11 @@
 	enable = true;
 	viAlias = true;
 	vimAlias = true;
+	plugins = with pkgs.vimPlugins; [
+		lazy-nvim
+		lualine-nvim
+		presence-nvim
+		];
   };
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   
