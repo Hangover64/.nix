@@ -19,6 +19,7 @@
 		];
   };
   xdg.configFile."nvim".source = ./dotfiles/nvim;
+  xdg.configFile."Fastfetch".source = ./dotfiles/fastfetch;
   
   programs.git = {
   	enable = true;
