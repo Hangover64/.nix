@@ -24,9 +24,7 @@
   #starship
   programs.starship = {
   	enable = true;
-	settings = {
-	add_newline = false;
-	};
+	settings = builtins.fromTOML (builtins.readFile ./dotfiles/starship.toml);
   };
 
   
