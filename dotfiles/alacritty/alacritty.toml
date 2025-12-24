@@ -1,18 +1,18 @@
 [font]
 #[[font]]
 # If you want to use the Nerd Font variant
-#import = [
-#"~/.config/alacritty/fonts/JetBrainsMono"
-#]
-#normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
-#bold = { family = "JetBrains Mono Nerd Font", style = "Bold" }
-#italic = { family = "JetBrains Mono Nerd Font", style = "Italic" }
-#bold_italic = { family = "JetBrains Mono Nerd Font", style = "Bold Italic" }
+import = [
+"/etc/nixos/dotfiles/alacritty/fonts/JetBrainsMono"
+]
+normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+bold = { family = "JetBrains Mono Nerd Font", style = "Bold" }
+italic = { family = "JetBrains Mono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrains Mono Nerd Font", style = "Bold Italic" }
 
 size = 13
 
 [window]
-opacity = 0.8
+opacity = 0.4
 
 [window.padding]
 x = 4
