@@ -31,7 +31,7 @@
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
-  xdg.configFile."zed".source = .dotfiles/zed;
+  xdg.configFile."zed".source = ./dotfiles/zed;
 
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
