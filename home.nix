@@ -27,9 +27,14 @@
 		presence-nvim
 		];
   };
+  #Programs dotfiles
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
+
+  #hyprland
+  xdg.configFile."hyprlock".source = ./dotfiles/hypr;
+
 
   #starship
   programs.starship = {
