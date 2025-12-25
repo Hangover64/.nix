@@ -34,6 +34,8 @@
 
   #hyprland
   xdg.configFile."hyprlock".source = ./dotfiles/hypr;
+  xdg.configFile."hyprpaper".source = ./dotfiles/hypr;
+  xdg.configFile."hyprland.conf".source = ./dotfiles/hypr;
 
 
   #starship
