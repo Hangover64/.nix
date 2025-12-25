@@ -33,10 +33,7 @@
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
 
   #hyprland
-  xdg.configFile."hyprlock".source = ./dotfiles/hypr;
-  xdg.configFile."hyprpaper".source = ./dotfiles/hypr;
-  xdg.configFile."hyprland.conf".source = ./dotfiles/hypr;
-
+  xdg.configFile."hypr".source = ./dotfiles/hypr;
 
   #starship
   programs.starship = {
