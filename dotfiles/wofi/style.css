@@ -1,6 +1,7 @@
 window {
     background-color: rgba(30, 30, 46, 0.8);
     border-radius: 10px;
+    border: 2px solid rgba(137, 180, 250, 1.0);
 }
 
 #input {
