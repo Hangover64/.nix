@@ -35,6 +35,7 @@
 
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
+  xdg.configFile."wofi".source = ./dotfiles/wofi;
 
   #starship
   programs.starship = {
