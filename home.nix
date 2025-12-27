@@ -110,6 +110,7 @@
 	nerd-fonts.jetbrains-mono
 	btop
 	dysk
+	make
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
