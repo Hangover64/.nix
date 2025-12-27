@@ -110,7 +110,7 @@
 	nerd-fonts.jetbrains-mono
 	btop
 	dysk
-	make
+	gnumake
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
