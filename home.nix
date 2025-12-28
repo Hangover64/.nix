@@ -111,6 +111,7 @@
 	btop
 	dysk
 	gnumake
+	libreoffice
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
