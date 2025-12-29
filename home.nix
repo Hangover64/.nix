@@ -32,6 +32,7 @@
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
   xdg.configFile."zed".source = ./dotfiles/zed;
+  xdg.configFile."waybar".source = ./dotfiles/waybar;
 
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
