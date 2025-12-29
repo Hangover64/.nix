@@ -37,7 +37,7 @@
         "interval": 2,
         "format": "󰻠 {usage}%",
         "tooltip": true,
-        "on-click": "kitty -e htop"
+        "on-click": "kitty -e btop"
     },
     
     "temperature": {

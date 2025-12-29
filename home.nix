@@ -113,6 +113,8 @@
 	dysk
 	gnumake
 	libreoffice
+	pavucontrol
+	networkmanagerapplet
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
