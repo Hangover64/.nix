@@ -6,7 +6,7 @@
     
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "tray"],
+    "modules-right": ["cpu", "temperature", "pulseaudio", "network", "battery", "tray"],
     
     "hyprland/workspaces": {
         "format": "{name}",
@@ -31,6 +31,22 @@
                 "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
             }
         }
+    },
+    
+    "cpu": {
+        "interval": 2,
+        "format": "󰻠 {usage}%",
+        "tooltip": true,
+        "on-click": "kitty -e htop"
+    },
+    
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true
     },
     
     "battery": {

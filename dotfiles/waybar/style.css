@@ -13,6 +13,8 @@ window#waybar {
 #workspaces,
 #window,
 #clock,
+#cpu,
+#temperature,
 #battery,
 #network,
 #pulseaudio,
@@ -48,6 +50,19 @@ window#waybar {
 #clock {
     color: #89dceb;
     font-weight: bold;
+}
+
+#cpu {
+    color: #f9e2af;
+}
+
+#temperature {
+    color: #fab387;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+    animation: blink 1s linear infinite;
 }
 
 #battery {
