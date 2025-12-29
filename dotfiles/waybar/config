@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 35,
-    "spacing": 8,
+    "spacing": 10,
     
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
