@@ -115,6 +115,8 @@
 	libreoffice
 	pavucontrol
 	networkmanagerapplet
+    file
+    imagemagick
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
