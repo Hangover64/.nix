@@ -117,7 +117,6 @@
 	networkmanagerapplet
     file
     imagemagick
-    vivaldi
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly
