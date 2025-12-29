@@ -6,7 +6,7 @@
     
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "temperature", "pulseaudio", "network", "battery", "tray"],
+    "modules-right": ["cpu", "temperature", "backlight", "pulseaudio", "network", "battery", "tray"],
     
     "hyprland/workspaces": {
         "format": "{name}",
@@ -48,6 +48,14 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip": true
     },
+
+    "backlight": {
+    	"device": "intel_backlight",
+	"format": "{icon} {percent}%",
+	"format-icons": ["", "", "", "", "", "", "", "", ""],
+	"on-scroll-up": "brightnessctl set +5%",
+	"on-scroll-down": "brightnessctl set 5%-"
+	},
     
     "battery": {
         "states": {

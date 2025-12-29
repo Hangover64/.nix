@@ -15,6 +15,7 @@ window#waybar {
 #clock,
 #cpu,
 #temperature,
+#backlight,
 #battery,
 #network,
 #pulseaudio,
@@ -63,6 +64,10 @@ window#waybar {
 #temperature.critical {
     color: #f38ba8;
     animation: blink 1s linear infinite;
+}
+
+#backlight {
+	color: #f5e0dc;
 }
 
 #battery {
