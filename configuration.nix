@@ -88,6 +88,7 @@
 		alacritty
 		protonvpn-gui
 		#developement
+		xfsprogs
 		python315
 		python313Packages.pydbus
 		gcc
