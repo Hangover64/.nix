@@ -1,0 +1,16 @@
+window {
+    background-color: rgba(30, 30, 46, 0.8);
+    border-radius: 10px;
+    border: 2px solid rgba(137, 180, 250, 1.0);
+}
+
+#input {
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgba(49, 50, 68, 0.9);
+    color: #cdd6f4;
+}
+
+#entry:selected {
+    background-color: rgba(88, 91, 112, 0,9);
+}
