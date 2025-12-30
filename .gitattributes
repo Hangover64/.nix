@@ -1,0 +1,2 @@
+hardware-configuration.nix merge=ours
+dotfiles/hypr/monitors.conf merge=ours
