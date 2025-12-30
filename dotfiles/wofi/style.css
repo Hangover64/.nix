@@ -1,5 +1,5 @@
 window {
-    background-color: rgba(30, 30, 46, 0.8);
+    background-color: rgba(30, 30, 46, 0.95);  /* Etwas weniger transparent */
     border-radius: 10px;
     border: 2px solid rgba(137, 180, 250, 1.0);
 }
@@ -11,6 +11,17 @@ window {
     color: #cdd6f4;
 }
 
+#entry {
+    color: #cdd6f4;  /* Catppuccin text color */
+    background-color: transparent;
+}
+
 #entry:selected {
-    background-color: rgba(88, 91, 112, 0,9);
+    background-color: rgba(88, 91, 112, 0.9);  /* Komma war falsch: 0,9 -> 0.9 */
+    color: #cdd6f4;
+}
+
+/* Optional: Hover effect */
+#entry:hover {
+    background-color: rgba(88, 91, 112, 0.5);
 }
