@@ -103,9 +103,12 @@
 	  libreoffice
 	  pavucontrol
 	  networkmanagerapplet
-    file
-    imagemagick
-    vivaldi
+	  file
+	  imagemagick
+	  vivaldi
+	  coolercontrol.coolercontrold
+	  coolercontrol.coolercontrol-ui
+	  coolercontrol.coolercontrol
   ];
 
   fonts.fontconfig.enable = true;
