@@ -12,6 +12,7 @@
 			systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
     };
+    kernelParams = [ "amdgpu.ppfeaturemask=0xffffffff" ];
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
