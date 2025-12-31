@@ -107,7 +107,7 @@
 	  imagemagick
 	  vivaldi
 	  coolercontrol.coolercontrold
-	  coolercontrol.coolercontrol-ui
+	  coolercontrol.coolercontrol-gui
 	  coolercontrol.coolercontrol
   ];
 
