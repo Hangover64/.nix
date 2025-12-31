@@ -108,7 +108,7 @@
 	  vivaldi
 	  coolercontrol.coolercontrold
 	  coolercontrol.coolercontrol-gui
-	  coolercontrol.coolercontrol
+	  coolercontrol.coolercontrol-ui-data
   ];
 
   fonts.fontconfig.enable = true;
