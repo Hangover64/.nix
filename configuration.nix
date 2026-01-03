@@ -21,6 +21,15 @@
 		networkmanager.enable = true;
 		nftables.enable = true;
 	};
+	hardware.graphics = {
+		enable = true;
+		enable32Bit = true;
+		extraPackages = with pkgs; [
+		amdvlk
+		rocmPackages.cls.icd
+		];
+	};
+
 
 	time.timeZone = "Europe/Berlin";
 
@@ -85,6 +94,9 @@
 
 	environment.systemPackages = with pkgs; [
 		#editor and commands
+		mesa
+		vulkan-tools
+
 		wget
 		zip
 		unzip
