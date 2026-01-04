@@ -96,6 +96,8 @@
 		#editor and commands
 		mesa
 		vulkan-tools
+		fish
+		zsh
 
 		wget
 		zip
