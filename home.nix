@@ -33,6 +33,7 @@
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
   xdg.configFile."zed".source = ./dotfiles/zed;
   xdg.configFile."waybar".source = ./dotfiles/waybar;
+  xdg.configFile."fish".source = ./dotfiles/fish;
 
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
