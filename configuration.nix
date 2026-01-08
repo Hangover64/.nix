@@ -103,6 +103,7 @@
 		hypridle
 		wofi
 		brightnessctl
+        jetbrains.idea
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
