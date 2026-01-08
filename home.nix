@@ -106,7 +106,7 @@
       file
       imagemagick
       vivaldi
-      jetbrains.idea
+      .jetbrains.idea
   ];
 
   fonts.fontconfig.enable = true;
