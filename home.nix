@@ -103,10 +103,10 @@
 	  libreoffice
 	  pavucontrol
 	  networkmanagerapplet
-    file
-    imagemagick
-    vivaldi
-    jetbrains.idea
+      file
+      imagemagick
+      vivaldi
+      jetbrains.idea
   ];
 
   fonts.fontconfig.enable = true;
