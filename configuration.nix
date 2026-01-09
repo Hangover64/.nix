@@ -128,6 +128,7 @@
 		hypridle
 		wofi
 		brightnessctl
+		nix-ld
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
