@@ -112,7 +112,6 @@
 	  coolercontrol.coolercontrold
 	  coolercontrol.coolercontrol-gui
 	  coolercontrol.coolercontrol-ui-data
-	  virtualbox
 	  linuxKernel.packages.linux_zen.virtualbox
   ];
 
