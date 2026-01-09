@@ -95,7 +95,7 @@
 	programs.nix-ld.libraries = with pkgs; [
 
 	];
-
+	virtualisation.virtualbox.host.enable = true;
 
 	environment.systemPackages = with pkgs; [
 		#editor and commands
