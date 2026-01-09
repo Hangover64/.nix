@@ -91,6 +91,11 @@
 	programs.coolercontrol.enable = true;
 	nixpkgs.config.allowUnfree = true;
 
+	programs.nix-ld.enable = true;
+	programs.nix-ld.libraries = with pkgs; [
+
+	];
+
 
 	environment.systemPackages = with pkgs; [
 		#editor and commands
