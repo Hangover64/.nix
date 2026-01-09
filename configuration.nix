@@ -18,6 +18,8 @@
 	"amdgpu.freesync=0"
 	];
     	kernelPackages = pkgs.linuxPackages_latest;
+	kernelModules = [ "vboxdrv" "vboxnetadp" "vboxnetflt"];
+	extraModulePackages = [ kernelModules ];
   };
 
 	networking = { 
