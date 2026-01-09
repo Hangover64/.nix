@@ -110,6 +110,7 @@
 	  coolercontrol.coolercontrold
 	  coolercontrol.coolercontrol-gui
 	  coolercontrol.coolercontrol-ui-data
+	  virtualbox
   ];
 
   fonts.fontconfig.enable = true;
