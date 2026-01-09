@@ -81,6 +81,9 @@
 
   home.stateVersion = "25.11"; 
 
+  virtualisation.virtualbox.host.enable = true;
+  
+
   home.packages = with pkgs; [
 	  htop
 	  fastfetch
@@ -111,6 +114,7 @@
 	  coolercontrol.coolercontrol-gui
 	  coolercontrol.coolercontrol-ui-data
 	  virtualbox
+	  linuxKernel.packages.linux_zen.virtualbox
   ];
 
   fonts.fontconfig.enable = true;
