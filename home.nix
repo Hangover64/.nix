@@ -106,6 +106,7 @@
       file
       imagemagick
       vivaldi
+      mako
   ];
 
   fonts.fontconfig.enable = true;
