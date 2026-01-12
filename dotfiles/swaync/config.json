@@ -29,17 +29,4 @@
   "hide-on-action": true,
   "script-fail-notify": true,
 
-  "widgets": [
-	  "inhibitors",
-	  "title",
-	  "dnd",
-	  "mpris",
-	  "notifications"
-  ],
-  "widget-config": {
-	  "mpris": {
-		  "image-size": 96,
-		  "image-radius": 12,
-		  "blur": true
-	   }
-}
+  }
