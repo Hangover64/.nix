@@ -34,6 +34,7 @@
   xdg.configFile."zed".source = ./dotfiles/zed;
   xdg.configFile."waybar".source = ./dotfiles/waybar;
   xdg.configFile."fish".source = ./dotfiles/fish;
+  xdg.configFile."swaync".source = ./dotfiles/swaync;
 
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
@@ -114,7 +115,7 @@
 	  coolercontrol.coolercontrol-ui-data
 	  linuxKernel.packages.linux_zen.virtualbox
 	  tor-browser
-	  mako
+	  swaynotificationcenter
   ];
 
   fonts.fontconfig.enable = true;
