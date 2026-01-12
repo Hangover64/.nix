@@ -92,6 +92,7 @@
 	programs.steam.enable = true;
 	programs.coolercontrol.enable = true;
 	nixpkgs.config.allowUnfree = true;
+	programs.fish.enable = true;
 
 	programs.nix-ld.enable = true;
 	programs.nix-ld.libraries = with pkgs; [
