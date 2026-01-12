@@ -3,10 +3,7 @@
 {
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
-  home.sessionVariables = {
-  	GDK_BACKEND = "wayland,x11";
-	DTK_USE_PORTAL = "1";
-	};
+  
   
   #dotfiles
   programs.bash = {
