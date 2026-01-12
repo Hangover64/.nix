@@ -3,6 +3,10 @@
 {
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
+  home.sessionVariables = {
+  	GDK_BACKEND = "wayland,x11";
+	DTK_USE_PORTAL = "1";
+	};
   
   #dotfiles
   programs.bash = {
@@ -94,7 +98,7 @@
 	  kdePackages.okular
 	  kdePackages.dolphin
 	  obsidian
-	  spotify
+	  spotify.override
 	  discord
 	  antigravity
 	  kdePackages.kwin
@@ -116,6 +120,7 @@
 	  linuxKernel.packages.linux_zen.virtualbox
 	  tor-browser
 	  swaynotificationcenter
+	  playerctl
   ];
 
   fonts.fontconfig.enable = true;

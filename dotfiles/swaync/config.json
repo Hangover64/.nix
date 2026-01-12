@@ -41,6 +41,17 @@
 		  "image-size": 96,
 		  "image-radius": 12,
 		  "blur": true
+	  },
+	  "title": {
+		  "text": "Notifications",
+		  "clear-all-button": true.
+		  "button-text": "Delete All"
+	  },
+	  "dnd": {
+		  "text": "Do not disturb"
+	  },
+	  "notifications": {
+		  "text": "Notifications"
 	  }
   }
 }
