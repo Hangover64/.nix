@@ -95,7 +95,7 @@
 	  kdePackages.okular
 	  kdePackages.dolphin
 	  obsidian
-	  spotify.override
+	  spotify
 	  discord
 	  antigravity
 	  kdePackages.kwin
