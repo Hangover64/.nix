@@ -60,6 +60,11 @@
 
 	services.printing.enable = true;
 	services.firewalld.enable = true;
+
+	#Eyetracker deactivation
+	services.udev.extraRules = ''
+		ACTION=="add", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0313", ATTR{authorized}="0"
+		'';
 	
 	services.pulseaudio.enable = false;
 	security.rtkit.enable = true;
