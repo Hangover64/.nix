@@ -114,6 +114,7 @@
 	  coolercontrol.coolercontrol-ui-data
 	  linuxKernel.packages.linux_zen.virtualbox
 	  tor-browser
+	  mako
   ];
 
   fonts.fontconfig.enable = true;
