@@ -113,6 +113,7 @@
 	  coolercontrol.coolercontrol-gui
 	  coolercontrol.coolercontrol-ui-data
 	  linuxKernel.packages.linux_zen.virtualbox
+	  tor-browser
   ];
 
   fonts.fontconfig.enable = true;
