@@ -71,6 +71,7 @@
 	};
 
 	users.users.hendrikf = {
+		shell = pkgs.fish;
 		isNormalUser = true;
 		description = "Hendrikf";
 		extraGroups = [ "networkmanager" "wheel" ];
