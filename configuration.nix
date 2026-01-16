@@ -81,6 +81,7 @@
 	environment.systemPackages = with pkgs; [
 		#editor and commands
 		wget
+        docker
 		zip
 		unzip
 		alacritty
