@@ -3,9 +3,6 @@
 {
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
-  home.users.hendrikf = {
-      programs.fish.enable = true;
-  };
   
   #dotfiles
   programs.bash = {
