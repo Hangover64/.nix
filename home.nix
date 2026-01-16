@@ -3,7 +3,7 @@
 {
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
-  home-manager.users.hendrikf = {
+  home.users.hendrikf = {
       programs.fish.enable = true;
   };
   
