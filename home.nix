@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/hendrikf";
   home-manager.users.hendrikf = {
       programs.fish.enable = true;
-  }
+  };
   
   #dotfiles
   programs.bash = {
