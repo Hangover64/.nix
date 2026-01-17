@@ -55,7 +55,9 @@
 	};
 	programs.hyprlock.enable = true;
 	services.displayManager.ly.enable = true;
-	
+	services.ratbagd.enable = true;
+
+
 	console.keyMap = "de-latin1-nodeadkeys";
 
 	services.printing.enable = true;
@@ -89,6 +91,7 @@
     extraSpecialArgs = {inherit inputs;};
     users = {
       "hendrikf" = import ./home.nix;
+      users.hendrikf.extraGroups = [ "input" ];
     };
   };
 	nix.settings.experimental-features = ["nix-command" "flakes"];
