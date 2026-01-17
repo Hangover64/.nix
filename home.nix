@@ -118,6 +118,7 @@
 	  tor-browser
 	  swaynotificationcenter
 	  playerctl
+	  piper
   ];
 
   fonts.fontconfig.enable = true;
