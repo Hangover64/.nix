@@ -81,7 +81,7 @@
 		shell = pkgs.fish;
 		isNormalUser = true;
 		description = "Hendrikf";
-		extraGroups = [ "networkmanager" "wheel" ];
+		extraGroups = [ "networkmanager" "wheel" "input" ];
 		packages = with pkgs; [
 			kdePackages.kate
 		];
@@ -91,8 +91,7 @@
     extraSpecialArgs = {inherit inputs;};
     users = {
       "hendrikf" = import ./home.nix;
-      users.hendrikf.extraGroups = [ "input" ];
-    };
+      };
   };
 	nix.settings.experimental-features = ["nix-command" "flakes"];
 
