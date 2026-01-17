@@ -119,6 +119,7 @@
 	  swaynotificationcenter
 	  playerctl
 	  piper
+	  libratbag
   ];
 
   fonts.fontconfig.enable = true;
