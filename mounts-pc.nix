@@ -6,5 +6,9 @@
     fsType = "xfs";
     options = [ "defaults" "x-systemd.automount" "noauto" ];
   };
-  
+  fileSystems."/mnt/media" = {
+    device = "/dev/disk/by-uuid/922C2CF22C2CD2D1";
+    fsType = "ntfs";
+    options = [ "defaults" "x-systemd.automount" "noauto" ];
+    };  
 }
