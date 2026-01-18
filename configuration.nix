@@ -139,6 +139,7 @@
 		wofi
 		brightnessctl
 		nix-ld
+		smplayer
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
