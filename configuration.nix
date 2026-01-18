@@ -140,6 +140,7 @@
 		brightnessctl
 		nix-ld
 		smplayer
+		mpv
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
