@@ -36,7 +36,7 @@
   xdg.configFile."waybar".source = ./dotfiles/waybar;
   xdg.configFile."fish".source = ./dotfiles/fish;
   xdg.configFile."swaync".source = ./dotfiles/swaync;
-
+  xdg.configFile."yazi".source = ./dotfiles/yazi;
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
   xdg.configFile."wofi".source = ./dotfiles/wofi;

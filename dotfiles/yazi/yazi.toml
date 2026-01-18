@@ -1,0 +1,5 @@
+[opener] 
+mp4 = [
+	{ run 'smplayer "$@"', block = true },
+	]
+
