@@ -141,6 +141,7 @@
 		nix-ld
 		smplayer
 		mpv
+		clangd
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
