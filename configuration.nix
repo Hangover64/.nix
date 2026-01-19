@@ -141,7 +141,7 @@
 		nix-ld
 		smplayer
 		mpv
-		clang-tool
+		clang-tools
 		libclang
 	];
 	fonts.packages = with pkgs; [
