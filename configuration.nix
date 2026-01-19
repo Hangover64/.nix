@@ -3,14 +3,22 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-  ];
+  ] ++ (if builtins.pathExists ./mounts-pc.nix
+  then [ ./mounts-pc.nix ]
+  else[]);
 
 	boot = {
 		loader = {
 			systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    	kernelParams = [ 
+	"amdgpu.ppfeaturemask=0xffffffff"
+	"amdgpu.noretry=0"
+	"amdgpu.freesync=0"
+	];
+    	kernelPackages = pkgs.linuxPackages_latest;
+	kernelModules = [ "vboxdrv" "vboxnetadp" "vboxnetflt"];
   };
 
 	networking = { 
@@ -18,6 +26,11 @@
 		networkmanager.enable = true;
 		nftables.enable = true;
 	};
+	hardware.graphics = {
+		enable = true;
+		enable32Bit = true;
+	};
+
 
 	time.timeZone = "Europe/Berlin";
 
@@ -42,11 +55,18 @@
 	};
 	programs.hyprlock.enable = true;
 	services.displayManager.ly.enable = true;
-	
+	services.ratbagd.enable = true;
+
+
 	console.keyMap = "de-latin1-nodeadkeys";
 
 	services.printing.enable = true;
 	services.firewalld.enable = true;
+
+	#Eyetracker deactivation
+	services.udev.extraRules = ''
+		ACTION=="add", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0313", ATTR{authorized}="0"
+		'';
 	
 	services.pulseaudio.enable = false;
 	security.rtkit.enable = true;
@@ -58,9 +78,10 @@
 	};
 
 	users.users.hendrikf = {
+		shell = pkgs.fish;
 		isNormalUser = true;
 		description = "Hendrikf";
-		extraGroups = [ "networkmanager" "wheel" ];
+		extraGroups = [ "networkmanager" "wheel" "input" ];
 		packages = with pkgs; [
 			kdePackages.kate
 		];
@@ -70,23 +91,36 @@
     extraSpecialArgs = {inherit inputs;};
     users = {
       "hendrikf" = import ./home.nix;
-    };
+      };
   };
 	nix.settings.experimental-features = ["nix-command" "flakes"];
 
 	programs.firefox.enable = true;
 	programs.steam.enable = true;
+	programs.coolercontrol.enable = true;
 	nixpkgs.config.allowUnfree = true;
+	programs.fish.enable = true;
+
+	programs.nix-ld.enable = true;
+	programs.nix-ld.libraries = with pkgs; [
+
+	];
+	virtualisation.virtualbox.host.enable = true;
 
 	environment.systemPackages = with pkgs; [
 		#editor and commands
+		mesa
+		vulkan-tools
+		fish
+		zsh
+
 		wget
-        docker
 		zip
 		unzip
 		alacritty
 		protonvpn-gui
 		#developement
+		xfsprogs
 		python315
 		python313Packages.pydbus
 		gcc
@@ -104,7 +138,15 @@
 		hypridle
 		wofi
 		brightnessctl
-        jetbrains.idea-ultimate
+		nix-ld
+		smplayer
+		mpv
+		clang-tools
+		libclang
+		razergenie
+		razer-cli
+		diffutils
+		docker
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
