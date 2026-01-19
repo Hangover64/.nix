@@ -146,6 +146,7 @@
 		razergenie
 		razer-cli
 		diffutils
+		docker
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono

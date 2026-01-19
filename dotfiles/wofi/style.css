@@ -1,27 +1,51 @@
 window {
-    background-color: rgba(30, 30, 46, 0.95);  /* Etwas weniger transparent */
-    border-radius: 10px;
-    border: 2px solid rgba(137, 180, 250, 1.0);
+margin: 0px;
+border: 1px solid #bd93f9;
+background-color: #282a36;
 }
 
 #input {
-    margin: 5px;
-    border-radius: 5px;
-    background-color: rgba(49, 50, 68, 0.9);
-    color: #cdd6f4;
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: #44475a;
 }
 
-#entry {
-    color: #cdd6f4;  /* Catppuccin text color */
-    background-color: transparent;
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #282a36;
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: #282a36;
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable #text {
+color: #282a36;
+}
+
+#entry > * {
+color: #f8f8f2;
 }
 
 #entry:selected {
-    background-color: rgba(88, 91, 112, 0.9);  /* Komma war falsch: 0,9 -> 0.9 */
-    color: #cdd6f4;
+background-color: #44475a;
 }
 
-/* Optional: Hover effect */
-#entry:hover {
-    background-color: rgba(88, 91, 112, 0.5);
+#entry:selected #text {
+font-weight: bold;
 }
