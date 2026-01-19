@@ -6,3 +6,4 @@ sudo git commit
 
 sudo make rebuild
 
+hyprctl reload
