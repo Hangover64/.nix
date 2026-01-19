@@ -6,6 +6,18 @@
     min-height: 0;
 }
 
+
+@import url("./colors.css");
+/* example usage */
+window#waybar {
+background: @background;
+color: @purple;
+/* or cyan, green, orange, pink, red, yellow, foreground, background-darker etc. */
+}
+
+
+
+
 window#waybar {
     background: transparent;
 }
@@ -125,3 +137,5 @@ window#waybar {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
 }
+
+
