@@ -143,6 +143,9 @@
 		mpv
 		clang-tools
 		libclang
+		razergenie
+		razer-cli
+		diffutils
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
