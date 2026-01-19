@@ -4,6 +4,7 @@
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
   
+  
   #dotfiles
   programs.bash = {
   	enable = true;
@@ -33,7 +34,9 @@
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
   xdg.configFile."zed".source = ./dotfiles/zed;
   xdg.configFile."waybar".source = ./dotfiles/waybar;
-
+  xdg.configFile."fish".source = ./dotfiles/fish;
+  xdg.configFile."swaync".source = ./dotfiles/swaync;
+  xdg.configFile."yazi".source = ./dotfiles/yazi;
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
   xdg.configFile."wofi".source = ./dotfiles/wofi;
@@ -80,6 +83,8 @@
 
   home.stateVersion = "25.11"; 
 
+  
+
   home.packages = with pkgs; [
 	  htop
 	  fastfetch
@@ -103,10 +108,18 @@
 	  libreoffice
 	  pavucontrol
 	  networkmanagerapplet
-      file
-      imagemagick
-      vivaldi
-      mako
+	  file
+	  imagemagick
+	  vivaldi
+	  coolercontrol.coolercontrold
+	  coolercontrol.coolercontrol-gui
+	  coolercontrol.coolercontrol-ui-data
+	  linuxKernel.packages.linux_zen.virtualbox
+	  tor-browser
+	  swaynotificationcenter
+	  playerctl
+	  piper
+	  libratbag
   ];
 
   fonts.fontconfig.enable = true;
