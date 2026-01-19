@@ -3,9 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-  ] ++ (if builtins.pathExists ./mounts-pc.nix
-  then [ ./mounts-pc.nix ]
-  else[]);
+  ];
 
 	boot = {
 		loader = {
