@@ -141,7 +141,8 @@
 		nix-ld
 		smplayer
 		mpv
-		clangd
+		clang-tool
+		libclang
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
