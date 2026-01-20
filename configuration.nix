@@ -150,7 +150,7 @@
 		mpvpaper
 		waypaper
 		ffmpeg
-		romcPackages.rocm-smi
+		rocmPackages.rocm-smi
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
