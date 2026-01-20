@@ -147,6 +147,9 @@
 		razer-cli
 		diffutils
 		docker
+		mpvpaper
+		waypaper
+		ffmpeg
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
