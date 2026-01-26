@@ -154,6 +154,7 @@
 		claude-code
 		nmgui
 		cava
+		quickshell
 
 		#screenshot shit
 		flameshot
