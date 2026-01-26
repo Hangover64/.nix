@@ -150,6 +150,7 @@
 	  libratbag
 	  spicetify-cli
 	  foot
+	  hyprpicker
   ];
 
   fonts.fontconfig.enable = true;
