@@ -15,7 +15,7 @@
       
       # Autostart
       exec-once = [
-        "hyprlock & caelestia-shell & hypridle"
+        "hyprlock & hypridle"
         "hyprpaper & swaync"
       ];
       
