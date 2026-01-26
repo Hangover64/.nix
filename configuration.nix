@@ -156,7 +156,6 @@
 		grim
 		dart-sass
 		app2unit
-		glib2
 		cliphist
 		fuzzel
 
