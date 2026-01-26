@@ -37,6 +37,10 @@
     environment = [];
   };
   settings = {
+	bar = {
+		margins = 0;
+		padding = 0;
+	};
     bar.status = {
       showBattery = false;
       paths.wallpaperDir = "~/Pictures/Wallpapers";

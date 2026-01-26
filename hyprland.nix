@@ -29,7 +29,7 @@
       # General
       general = {
         gaps_in = 5;
-        gaps_out = 10;
+        gaps_out = 2;
         border_size = 2;
         "col.active_border" = "rgb(44475a) rgb(bd93f9) 90deg";
         "col.inactive_border" = "rgba(44475aaa)";
