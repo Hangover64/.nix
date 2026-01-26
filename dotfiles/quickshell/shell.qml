@@ -9,7 +9,7 @@ ShellRoot {
     PanelWindow {
         id: bar
 
-	exclusionMode: ExclusionMode.Normal
+	exclusionMode: ExclusionMode.Auto
 
         anchors {
             top: true
@@ -127,10 +127,12 @@ ShellRoot {
     // Dock - Links und transparent
     PanelWindow {
 	    id: dock
-	    exclusionMode: ExclusionMode.Normal
+	    exclusionMode: ExclusionMode.Auto
         	
         anchors {
-            left: true
+		left: true
+		top: true
+		bottom: true
         }
         
         implicitWidth: 90
