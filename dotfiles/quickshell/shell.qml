@@ -8,7 +8,9 @@ ShellRoot {
     // Top Bar
     PanelWindow {
         id: bar
-        
+
+	exclusionMode: ExclusionMode.Normal
+
         anchors {
             top: true
             left: true
@@ -125,9 +127,8 @@ ShellRoot {
     // Dock - Links und transparent
     PanelWindow {
 	    id: dock
-
-	    exclusive: true
-        
+	    exclusionMode: ExclusionMode.Normal
+        	
         anchors {
             left: true
         }
