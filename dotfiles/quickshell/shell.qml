@@ -126,7 +126,7 @@ ShellRoot {
     PanelWindow {
 	    id: dock
 
-	    exclusivity: "exclusive"
+	    exclusive: true
         
         anchors {
             left: true
