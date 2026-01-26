@@ -56,9 +56,6 @@
 	programs.hyprlock.enable = true;
 	services.displayManager.cosmic-greeter = {
     enable = true;
-    extraConfig = ''
-    keyboard-layout=de-latin1-nodeadkeys
-    '';
     };
 	services.ratbagd.enable = true;
 
@@ -67,6 +64,10 @@
 
 	services.printing.enable = true;
 	services.firewalld.enable = true;
+  services.xserver.xkb = {
+    layout = "de";
+    variant = "";
+  };
 
 	services.pulseaudio.enable = false;
 	security.rtkit.enable = true;
