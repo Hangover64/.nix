@@ -70,7 +70,7 @@ ShellRoot {
                             
 			    onClicked: {
 				var ws = index +1;
-                                Quickshell.launch(["hyprctl", "dispatch", "workspace", (index + 1).toString()]);
+                                Quickshell.execDetached(["hyprctl", "dispatch", "workspace", (index + 1).toString()]);
                             }
                         }
                     }
@@ -201,7 +201,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.launch([modelData.app]);
+                                Quickshell.execDetached([modelData.app]);
                             }
                         }
                     }
