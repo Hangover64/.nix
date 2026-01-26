@@ -117,20 +117,23 @@ ShellRoot {
         }
     }
     
-    // Dock
+    // Dock - zentriert mit x-Berechnung
     PanelWindow {
         id: dock
         
         anchors {
             bottom: true
-            horizontalCenter: true
+            left: true
+            right: true
         }
         
-        width: dockLayout.width + 20
-        height: 70
+        height: 90
         
         Rectangle {
-            anchors.fill: parent
+            id: dockContainer
+            anchors.centerIn: parent
+            width: dockLayout.width + 20
+            height: 70
             color: "#1e1e2e"
             radius: 16
             
