@@ -49,7 +49,7 @@
 		};
 	};
 	caelestia-cli = {
-		url = "github:caelestia-dots/cli",
+		url = "github:caelestia-dots/cli";
 		inputs.nixpkgs.follows = "nixpkgs";
 		};
 
