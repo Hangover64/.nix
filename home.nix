@@ -166,7 +166,7 @@
   imports = [
     ./modules/unfree.nix
     inputs.caelestia-shell.homeManagerModules.default
-    #./hyprland.nix
-    #./hypr-extras.nix
+    ./hyprland.nix
+    ./hypr-extras.nix
   ];
 }
