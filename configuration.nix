@@ -152,6 +152,8 @@
 		ffmpeg
 		rocmPackages.rocm-smi
 		claude-code
+		nmgui
+		cava
 
 		#screenshot shit
 		flameshot
