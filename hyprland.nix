@@ -151,7 +151,8 @@
         "$mainMod, M, exit"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating"
-        "$mainMod, R, exec, $menu"
+        #"$mainMod, R, exec, $menu"
+	"$mainMod, R, caelestia:lancher"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
         "$mainMod, L, exec, hyprlock"
@@ -197,20 +198,18 @@
         "$mainMod ALT, S, exec, hyprshot -m output"
         
         # Caelestia Shell Keybinds
-        "$mainMod, A, global, caelestia:launcher"
+        #"$mainMod, A, global, caelestia:launcher"
         "$mainMod, N, global, caelestia:notifs"
         "$mainMod SHIFT, L, global, caelestia:lock"
         "$mainMod, D, global, caelestia:dashboard"
         "$mainMod SHIFT, P, global, caelestia:picker"
         "$mainMod SHIFT, E, global, caelestia:session"
       ];
-      
       # Mouse bindings
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
-      
       # Media keys (with repeat)
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -220,7 +219,6 @@
         ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
         ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
       ];
-      
       # Media keys (no repeat)
       bindl = [
         ", XF86AudioNext, exec, playerctl next"
@@ -229,12 +227,6 @@
         ", XF86AudioPrev, exec, playerctl previous"
         "$mainMod, Backspace, global, caelestia:clearNotifs"
       ];
-      
-      # Special Caelestia launcher keybind
-      bindi = [
-        "$mainMod, Super_L, global, caelestia:launcher"
-      ];
-      
       # Window rules
       windowrule = [
         "suppressevent maximize, class:.*"
