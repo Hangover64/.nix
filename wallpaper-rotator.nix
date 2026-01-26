@@ -23,4 +23,4 @@ systemd.user.timers.wallpaper-rotation = {
 		WantedBy = [ "timers.target" ];
 		};
 	};
-};
+}
