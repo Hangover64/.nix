@@ -40,7 +40,7 @@
   #hyprland
   xdg.configFile."hypr".source = ./dotfiles/hypr;
   xdg.configFile."wofi".source = ./dotfiles/wofi;
-  xdg.configFile."quickshell".source = ./dotfiles/quickshell;
+  xdg.configFile."quickshell".source = ./dotfiles/quickshell/shell.qml;
 
   #starship
   programs.starship = {
