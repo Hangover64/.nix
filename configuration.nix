@@ -150,6 +150,7 @@
 		nmgui
 		cava
 		quickshell
+    rustup
 
 		#celestia
 		swappy
