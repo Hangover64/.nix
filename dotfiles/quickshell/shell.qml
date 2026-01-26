@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
+import Quickshell.Hyprland
 
 ShellRoot {
     // Top Bar
@@ -34,8 +35,12 @@ ShellRoot {
                     Rectangle {
                         Layout.preferredWidth: 40
                         Layout.preferredHeight: 30
-                        radius: 8
-                        color: index === 0 ? "#bd93f9" : "#44475a"  // Dracula Purple / Current Line
+			radius: 8
+
+			property int workspaceId: index + 1
+			property bool isActive: Hyprland.focusedMonitor.activeWorkspace.id === workspaceId
+
+                        color: isActive ? "#bd93f9" : "#44475a"  // Dracula Purple / Current Line
                         
                         scale: mouseArea.containsMouse ? 1.2 : 1.0
                         
@@ -64,7 +69,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.run("bash", ["-c", "hyprctl dispatch workspace " + (index + 1)])
+                                Quickshell.Process.exec("hyprctl", ["dispatch", "workspace", workspace.toString()]);
                             }
                         }
                     }
@@ -195,7 +200,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.run("bash", ["-c", modelData.app])
+                                Quickshell.Process.exec(modelData.app, []);
                             }
                         }
                     }
