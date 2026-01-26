@@ -68,8 +68,9 @@ ShellRoot {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
                             
-                            onClicked: {
-                                Quickshell.Process.exec("hyprctl", ["dispatch", "workspace", workspace.toString()]);
+			    onClicked: {
+				var ws = index +1;
+                                Quickshell.Process.run("hyprctl", ["dispatch", "workspace", workspace.toString()]);
                             }
                         }
                     }
@@ -200,7 +201,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.exec(modelData.app, []);
+                                Quickshell.Process.run(modelData.app, []);
                             }
                         }
                     }
