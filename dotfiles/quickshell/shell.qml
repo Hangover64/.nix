@@ -6,7 +6,7 @@ import Quickshell.Wayland
 ShellRoot {
     // Top Bar
     PanelWindow {
-	    id: bar
+        id: bar
         
         anchors {
             top: true
@@ -14,11 +14,11 @@ ShellRoot {
             right: true
         }
         
-        height: 80
+        height: 40
         
         Rectangle {
             anchors.fill: parent
-            color: "#1e1e2e"
+            color: "#282a36"  // Dracula Background
             
             // Workspaces
             RowLayout {
@@ -35,7 +35,7 @@ ShellRoot {
                         Layout.preferredWidth: 40
                         Layout.preferredHeight: 30
                         radius: 8
-                        color: index === 0 ? "#cba6f7" : "#313244"
+                        color: index === 0 ? "#bd93f9" : "#44475a"  // Dracula Purple / Current Line
                         
                         scale: mouseArea.containsMouse ? 1.2 : 1.0
                         
@@ -53,7 +53,7 @@ ShellRoot {
                         Text {
                             anchors.centerIn: parent
                             text: index + 1
-                            color: "#cdd6f4"
+                            color: "#f8f8f2"  // Dracula Foreground
                             font.bold: true
                         }
                         
@@ -78,10 +78,10 @@ ShellRoot {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: 10
-                width: 200
-                height: 60
+                width: 100
+                height: 30
                 radius: 8
-                color: "#313244"
+                color: "#44475a"  // Dracula Current Line
                 
                 scale: clockMouse.containsMouse ? 1.1 : 1.0
                 
@@ -96,7 +96,7 @@ ShellRoot {
                     id: clockText
                     anchors.centerIn: parent
                     text: Qt.formatTime(new Date(), "HH:mm")
-                    color: "#cdd6f4"
+                    color: "#f8f8f2"  // Dracula Foreground
                     font.pixelSize: 14
                 }
                 
@@ -117,9 +117,9 @@ ShellRoot {
         }
     }
     
-    // Dock - zentriert mit x-Berechnung
+    // Dock
     PanelWindow {
-	    id: dock
+        id: dock
         
         anchors {
             bottom: true
@@ -127,15 +127,17 @@ ShellRoot {
             right: true
         }
         
-        height: 180
+        height: 90
         
         Rectangle {
             id: dockContainer
             anchors.centerIn: parent
-            width: dockLayout.width + 40
-            height: 140
-            color: "#1e1e2e"
-            radius: 32
+            width: dockLayout.width + 20
+            height: 70
+            color: "#282a36"  // Dracula Background
+            radius: 16
+            border.color: "#6272a4"  // Dracula Comment
+            border.width: 1
             
             RowLayout {
                 id: dockLayout
@@ -143,13 +145,18 @@ ShellRoot {
                 spacing: 10
                 
                 Repeater {
-                    model: ["🦊", "💻", "📝", "🎵"]
+                    model: [
+                        {name: "Firefox", app: "firefox", color: "#ff5555"},      // Dracula Red
+                        {name: "Terminal", app: "kitty", color: "#50fa7b"},       // Dracula Green
+                        {name: "Code", app: "code", color: "#8be9fd"},            // Dracula Cyan
+                        {name: "Spotify", app: "spotify", color: "#f1fa8c"}       // Dracula Yellow
+                    ]
                     
                     Rectangle {
                         Layout.preferredWidth: 50
                         Layout.preferredHeight: 50
                         radius: 10
-                        color: "#313244"
+                        color: dockMouse.containsMouse ? modelData.color : "#44475a"  // Dracula Current Line
                         
                         scale: dockMouse.containsMouse ? 1.5 : 1.0
                         y: dockMouse.containsMouse ? -10 : 0
@@ -168,10 +175,18 @@ ShellRoot {
                             }
                         }
                         
+                        Behavior on color {
+                            ColorAnimation {
+                                duration: 200
+                            }
+                        }
+                        
                         Text {
                             anchors.centerIn: parent
-                            text: modelData
-                            font.pixelSize: 24
+                            text: modelData.name.substring(0, 1)
+                            color: "#f8f8f2"  // Dracula Foreground
+                            font.pixelSize: 20
+                            font.bold: true
                         }
                         
                         MouseArea {
@@ -181,8 +196,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                var apps = ["firefox", "alacritty", "code", "spotify"]
-                                Quickshell.Process.run(apps[index], [])
+                                Quickshell.Process.run(modelData.app, [])
                             }
                         }
                     }
