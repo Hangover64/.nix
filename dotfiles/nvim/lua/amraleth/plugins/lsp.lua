@@ -14,6 +14,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "clangd",
+          "nil_ls",
         },
         automatic_installation = true,
       })
@@ -69,7 +70,7 @@ return {
         },
       }
 
-      local servers = { "lua_ls", "clangd" }
+      local servers = { "lua_ls", "clangd", "nil_ls" }
       for _, server in ipairs(servers) do
         vim.lsp.enable(server)
       end
