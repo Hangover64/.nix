@@ -132,7 +132,7 @@ ShellRoot {
         }
         
         width: 90
-        height: dockLayout.height + 20
+        implicitHeight: dockLayout.implicitHeight + 20
         
         color: "transparent"  // Panel transparent
         
@@ -140,7 +140,7 @@ ShellRoot {
             id: dockContainer
             anchors.centerIn: parent
             implicitWidth: 70
-            implicitHeight: dockLayout.height + 20
+            implicitHeight: dockLayout.implicitHeight + 20
             color: "transparent"  // Hintergrund transparent
             radius: 16
             
