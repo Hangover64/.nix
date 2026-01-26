@@ -7,7 +7,6 @@ ShellRoot {
     // Top Bar
     PanelWindow {
         id: bar
-        implicitHeight: false
         
         anchors {
             top: true
@@ -120,7 +119,6 @@ ShellRoot {
     // Dock - Links und transparent
     PanelWindow {
         id: dock
-        implicitHeight: false
         
         anchors {
             bottom: true
