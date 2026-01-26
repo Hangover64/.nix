@@ -124,10 +124,11 @@ ShellRoot {
     
     // Dock - Links und transparent
     PanelWindow {
-        id: dock
+	    id: dock
+
+	    exclusivity: "exclusive"
         
         anchors {
-            bottom: true
             left: true
         }
         
