@@ -54,7 +54,12 @@
 	  xwayland.enable = true;
 	};
 	programs.hyprlock.enable = true;
-	services.displayManager.cosmic-greeter.enable = true;
+	services.displayManager.cosmic-greeter = {
+    enable = true;
+    extraConfig = ''
+    keyboard-layout=de-latin1-nodeadkeys
+    '';
+    };
 	services.ratbagd.enable = true;
 
 
