@@ -41,6 +41,9 @@
       showBattery = false;
       paths.wallpaperDir = "~/Pictures/Wallpapers";
       launcher.maxWallpapers = 9;
+      theme = {
+      	scheme ="dynamic";
+	};
     };
   };
   cli = {
