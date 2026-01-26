@@ -152,7 +152,7 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating"
         #"$mainMod, R, exec, $menu"
-	"$mainMod, R, caelestia:launcher"
+	#"$mainMod, R, caelestia:launcher"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
         "$mainMod, L, exec, hyprlock"
@@ -198,7 +198,7 @@
         "$mainMod ALT, S, exec, hyprshot -m output"
         
         # Caelestia Shell Keybinds
-        #"$mainMod, A, global, caelestia:launcher"
+        "$mainMod, R, global, caelestia:launcher"
         "$mainMod, N, global, caelestia:notifs"
         "$mainMod SHIFT, L, global, caelestia:lock"
         "$mainMod, D, global, caelestia:dashboard"
