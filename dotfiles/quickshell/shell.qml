@@ -4,92 +4,93 @@ import Quickshell
 import Quickshell.Wayland
 
 ShellRoot {
-    Scope {
-        // Animated Bar
-        WaylandPanel {
-            anchors {
-                left: true
-                right: true
-                top: true
-            }
-            
-            height: 40
+    // Top Bar
+    PanelWindow {
+        id: bar
+        
+        anchors {
+            top: true
+            left: true
+            right: true
+        }
+        
+        height: 40
+        
+        Rectangle {
+            anchors.fill: parent
             color: "#1e1e2e"
             
-            // Smooth animations
-            Behavior on height {
-                NumberAnimation {
-                    duration: 300
-                    easing.type: Easing.OutCubic
-                }
-            }
-            
-            Rectangle {
+            // Workspaces
+            RowLayout {
                 id: workspaces
                 anchors.left: parent.left
-                anchors.margins: 10
-                width: childrenRect.width
-                height: parent.height
-                color: "transparent"
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 10
+                spacing: 5
                 
-                RowLayout {
-                    spacing: 5
+                Repeater {
+                    model: 10
                     
-                    Repeater {
-                        model: 10
+                    Rectangle {
+                        Layout.preferredWidth: 40
+                        Layout.preferredHeight: 30
+                        radius: 8
+                        color: index === 0 ? "#cba6f7" : "#313244"
                         
-                        Rectangle {
-                            width: 40
-                            height: 30
-                            radius: 8
-                            color: index === 0 ? "#cba6f7" : "#313244"
-                            
-                            // Hover animation
-                            scale: mouseArea.containsMouse ? 1.2 : 1.0
-                            
-                            Behavior on scale {
-                                NumberAnimation {
-                                    duration: 200
-                                    easing.type: Easing.OutBack
-                                }
+                        scale: mouseArea.containsMouse ? 1.2 : 1.0
+                        
+                        Behavior on scale {
+                            NumberAnimation {
+                                duration: 200
+                                easing.type: Easing.OutBack
                             }
+                        }
+                        
+                        Behavior on color {
+                            ColorAnimation { duration: 200 }
+                        }
+                        
+                        Text {
+                            anchors.centerIn: parent
+                            text: index + 1
+                            color: "#cdd6f4"
+                            font.bold: true
+                        }
+                        
+                        MouseArea {
+                            id: mouseArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
                             
-                            Behavior on color {
-                                ColorAnimation { duration: 200 }
-                            }
-                            
-                            MouseArea {
-                                id: mouseArea
-                                anchors.fill: parent
-                                hoverEnabled: true
-                                
-                                onClicked: {
-                                    // Hyprland workspace switch
-                                    Quickshell.Process.run("hyprctl", 
-                                        ["dispatch", "workspace", (index + 1).toString()])
-                                }
-                            }
-                            
-                            Text {
-                                anchors.centerIn: parent
-                                text: index + 1
-                                color: "#cdd6f4"
-                                font.bold: true
+                            onClicked: {
+                                Quickshell.Process.run("hyprctl", 
+                                    ["dispatch", "workspace", (index + 1).toString()])
                             }
                         }
                     }
                 }
             }
             
-            // Clock with sliding animation
+            // Clock
             Rectangle {
                 id: clock
                 anchors.right: parent.right
-                anchors.margins: 10
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.rightMargin: 10
                 width: 100
                 height: 30
                 radius: 8
                 color: "#313244"
+                
+                scale: clockMouse.containsMouse ? 1.1 : 1.0
+                
+                Behavior on scale {
+                    NumberAnimation {
+                        duration: 200
+                        easing.type: Easing.OutElastic
+                    }
+                }
                 
                 Text {
                     id: clockText
@@ -106,85 +107,79 @@ ShellRoot {
                     onTriggered: clockText.text = Qt.formatTime(new Date(), "HH:mm")
                 }
                 
-                // Bounce on hover
-                scale: clockMouse.containsMouse ? 1.1 : 1.0
-                
-                Behavior on scale {
-                    NumberAnimation {
-                        duration: 200
-                        easing.type: Easing.OutElastic
-                    }
-                }
-                
                 MouseArea {
                     id: clockMouse
                     anchors.fill: parent
                     hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
                 }
             }
         }
+    }
+    
+    // Dock
+    PanelWindow {
+        id: dock
         
-        // Dock with spring animation
-        WaylandPanel {
-            anchors {
-                bottom: true
-                horizontalCenter: true
-            }
-            
-            width: dock.width + 20
-            height: 70
+        anchors {
+            bottom: true
+            horizontalCenter: true
+        }
+        
+        width: dockLayout.width + 20
+        height: 70
+        
+        Rectangle {
+            anchors.fill: parent
             color: "#1e1e2e"
+            radius: 16
             
             RowLayout {
-                id: dock
+                id: dockLayout
                 anchors.centerIn: parent
                 spacing: 10
                 
                 Repeater {
-                    model: ["firefox", "kitty", "code", "spotify"]
+                    model: ["🦊", "💻", "📝", "🎵"]
                     
                     Rectangle {
-                        width: 50
-                        height: 50
+                        Layout.preferredWidth: 50
+                        Layout.preferredHeight: 50
                         radius: 10
                         color: "#313244"
                         
-                        // Spring animation on hover
                         scale: dockMouse.containsMouse ? 1.5 : 1.0
+                        y: dockMouse.containsMouse ? -10 : 0
                         
-                        property real targetY: dockMouse.containsMouse ? -10 : 0
-                        
-                        transform: Translate {
-                            y: parent.targetY
-                            Behavior on y {
-                                SpringAnimation {
-                                    spring: 3
-                                    damping: 0.3
-                                }
+                        Behavior on scale {
+                            NumberAnimation {
+                                duration: 300
+                                easing.type: Easing.OutBack
                             }
                         }
                         
-                        Behavior on scale {
-                            SpringAnimation {
-                                spring: 3
-                                damping: 0.3
+                        Behavior on y {
+                            NumberAnimation {
+                                duration: 300
+                                easing.type: Easing.OutBack
                             }
                         }
                         
                         Text {
                             anchors.centerIn: parent
                             text: modelData
-                            color: "#cdd6f4"
-                            font.pixelSize: 12
+                            font.pixelSize: 24
                         }
                         
                         MouseArea {
                             id: dockMouse
                             anchors.fill: parent
                             hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.run(modelData, [])
+                                var apps = ["firefox", "kitty", "code", "spotify"]
+                                Quickshell.Process.run(apps[index], [])
                             }
                         }
                     }
