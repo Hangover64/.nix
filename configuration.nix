@@ -48,9 +48,12 @@
 		  LC_TIME = "de_DE.UTF-8";
 		};
 	};
-	caelestia-cli = {
+	inputs = {
+		nixpkgs.url = "github:nixos/nikpkgs/nixos-unstable";
+		aelestia-cli = {
 		url = "github:caelestia-dots/cli";
 		inputs.nixpkgs.follows = "nixpkgs";
+		};
 		};
 
 
@@ -68,11 +71,6 @@
 	services.printing.enable = true;
 	services.firewalld.enable = true;
 
-	#Eyetracker deactivation
-	services.udev.extraRules = ''
-		ACTION=="add", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0313", ATTR{authorized}="0"
-		'';
-	
 	services.pulseaudio.enable = false;
 	security.rtkit.enable = true;
 	services.pipewire = {
