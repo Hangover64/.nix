@@ -50,7 +50,6 @@
       	scheme ="dynamic";
 	};
     };
-  };
   cli = {
     enable = true; # Also add caelestia-cli to path
     settings = {
