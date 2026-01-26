@@ -37,6 +37,15 @@
       environment = [];
     };
     settings = {
+      performance = {
+        keepAlive = true;
+        preloadWidgets = true;
+      };
+
+      dashboard = {
+        mediaUpdateInterval = 1000;
+      };
+
       bar = {
         margins = 0;
         padding = 0;
