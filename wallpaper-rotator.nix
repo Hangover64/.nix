@@ -7,7 +7,7 @@ systemd.user.services.wallpaper-rotation = {
 	
 	Service = {
 		Type = "oneshot";
-		ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.caelestia-shell}/bin/caelestia wallpaper -r'";
+		ExecStart = "caelestia wallpaper -r";
 		};
 	};
 systemd.user.timers.wallpaper-rotation = {
