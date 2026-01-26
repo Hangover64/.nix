@@ -27,11 +27,12 @@
 		  presence-nvim
 		];
   };
-
+  
+  
   programs.caelestia = {
   enable = true;
   systemd = {
-    enable = false; # if you prefer starting from your compositor
+    enable = true; # if you prefer starting from your compositor
     target = "graphical-session.target";
     environment = [];
   };
@@ -64,7 +65,7 @@
   xdg.configFile."swaync".source = ./dotfiles/swaync;
   xdg.configFile."yazi".source = ./dotfiles/yazi;
   #hyprland
-  xdg.configFile."hypr".source = ./dotfiles/hypr;
+  #xdg.configFile."hypr".source = ./dotfiles/hypr;
   xdg.configFile."wofi".source = ./dotfiles/wofi;
   #xdg.configFile."quickshell".source = ./dotfiles/quickshell;
 
@@ -165,5 +166,7 @@
   imports = [
     ./modules/unfree.nix
     inputs.caelestia-shell.homeManagerModules.default
+    ./hyprland.nix
+    ./hypr-extras.nix
   ];
 }
