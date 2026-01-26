@@ -7,7 +7,6 @@ ShellRoot {
     // Top Bar
     PanelWindow {
 	    id: bar
-	    scale: 2
         
         anchors {
             top: true
@@ -15,7 +14,7 @@ ShellRoot {
             right: true
         }
         
-        height: 40
+        height: 80
         
         Rectangle {
             anchors.fill: parent
@@ -79,8 +78,8 @@ ShellRoot {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: 10
-                width: 100
-                height: 30
+                width: 200
+                height: 60
                 radius: 8
                 color: "#313244"
                 
@@ -121,7 +120,6 @@ ShellRoot {
     // Dock - zentriert mit x-Berechnung
     PanelWindow {
 	    id: dock
-	    scale: 2
         
         anchors {
             bottom: true
@@ -129,15 +127,15 @@ ShellRoot {
             right: true
         }
         
-        height: 90
+        height: 180
         
         Rectangle {
             id: dockContainer
             anchors.centerIn: parent
-            width: dockLayout.width + 20
-            height: 70
+            width: dockLayout.width + 40
+            height: 140
             color: "#1e1e2e"
-            radius: 16
+            radius: 32
             
             RowLayout {
                 id: dockLayout
