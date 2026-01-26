@@ -1,3 +1,5 @@
+{ config, pkgs, ...}
+{
 systemd.user.services.wallpaper-rotation = {
 	Unit = {
 		Description = "Rotate wallpapers automatically";
@@ -21,3 +23,4 @@ systemd.user.timers.wallpaper-rotation = {
 		WantedBy = [ "timers.target" ];
 		};
 	};
+};
