@@ -6,7 +6,8 @@ import Quickshell.Wayland
 ShellRoot {
     // Top Bar
     PanelWindow {
-        id: bar
+	    id: bar
+	    scale: 2
         
         anchors {
             top: true
@@ -119,7 +120,8 @@ ShellRoot {
     
     // Dock - zentriert mit x-Berechnung
     PanelWindow {
-        id: dock
+	    id: dock
+	    scale: 2
         
         anchors {
             bottom: true
@@ -181,7 +183,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                var apps = ["firefox", "kitty", "code", "spotify"]
+                                var apps = ["firefox", "alacritty", "code", "spotify"]
                                 Quickshell.Process.run(apps[index], [])
                             }
                         }
