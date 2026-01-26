@@ -1,3 +1,5 @@
+import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
 
@@ -30,7 +32,7 @@ ShellRoot {
                 height: parent.height
                 color: "transparent"
                 
-                Row {
+                RowLayout {
                     spacing: 5
                     
                     Repeater {
@@ -90,6 +92,7 @@ ShellRoot {
                 color: "#313244"
                 
                 Text {
+                    id: clockText
                     anchors.centerIn: parent
                     text: Qt.formatTime(new Date(), "HH:mm")
                     color: "#cdd6f4"
@@ -100,7 +103,7 @@ ShellRoot {
                     interval: 1000
                     running: true
                     repeat: true
-                    onTriggered: parent.children[0].text = Qt.formatTime(new Date(), "HH:mm")
+                    onTriggered: clockText.text = Qt.formatTime(new Date(), "HH:mm")
                 }
                 
                 // Bounce on hover
@@ -132,7 +135,7 @@ ShellRoot {
             height: 70
             color: "#1e1e2e"
             
-            Row {
+            RowLayout {
                 id: dock
                 anchors.centerIn: parent
                 spacing: 10
@@ -148,7 +151,18 @@ ShellRoot {
                         
                         // Spring animation on hover
                         scale: dockMouse.containsMouse ? 1.5 : 1.0
-                        y: dockMouse.containsMouse ? -10 : 0
+                        
+                        property real targetY: dockMouse.containsMouse ? -10 : 0
+                        
+                        transform: Translate {
+                            y: parent.targetY
+                            Behavior on y {
+                                SpringAnimation {
+                                    spring: 3
+                                    damping: 0.3
+                                }
+                            }
+                        }
                         
                         Behavior on scale {
                             SpringAnimation {
@@ -157,18 +171,11 @@ ShellRoot {
                             }
                         }
                         
-                        Behavior on y {
-                            SpringAnimation {
-                                spring: 3
-                                damping: 0.4
-                            }
-                        }
-                        
-                        Image {
+                        Text {
                             anchors.centerIn: parent
-                            source: "/usr/share/icons/hicolor/48x48/apps/" + modelData + ".png"
-                            width: 30
-                            height: 30
+                            text: modelData
+                            color: "#cdd6f4"
+                            font.pixelSize: 12
                         }
                         
                         MouseArea {
@@ -177,7 +184,7 @@ ShellRoot {
                             hoverEnabled: true
                             
                             onClicked: {
-                                Quickshell.Process.run(modelData)
+                                Quickshell.Process.run(modelData, [])
                             }
                         }
                     }
