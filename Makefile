@@ -1,4 +1,4 @@
 rebuild:
-	nixos-rebuild switch --flake /etc/nixos\#nixos
+	nixos-rebuild switch --flake .#nixos
 update:
-	nixos-rebuild switch --upgrade --flake /etc/nixos\#nixos
+	nixos-rebuild switch --upgrade --flake .#nixos

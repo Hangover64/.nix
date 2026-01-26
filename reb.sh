@@ -1,8 +1,8 @@
 # !/usr/bin/env bash
 
-sudo git add .
+git add .
 
-sudo git commit
+git commit
 
 sudo make rebuild
 
