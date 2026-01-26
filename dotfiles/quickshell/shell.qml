@@ -141,7 +141,7 @@ ShellRoot {
 		bottom: true
         }
         
-        implicitWidth: 90
+        implicitWidth: 50
         implicitHeight: dockLayout.implicitHeight + 20
         
         color: "transparent"  // Panel transparent
