@@ -40,8 +40,8 @@
     bar.status = {
       showBattery = false;
       paths.wallpaperDir = "$HOME/Pictures/Pics/16:9/";
+      launcher.maxWallpapers = 9;
     };
-    paths.wallpaperDir = "~/Pictures/Pics/16:9";
   };
   cli = {
     enable = true; # Also add caelestia-cli to path
