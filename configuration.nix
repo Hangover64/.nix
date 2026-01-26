@@ -48,14 +48,6 @@
 		  LC_TIME = "de_DE.UTF-8";
 		};
 	};
-	inputs = {
-		nixpkgs.url = "github:nixos/nikpkgs/nixos-unstable";
-		aelestia-cli = {
-		url = "github:caelestia-dots/cli";
-		inputs.nixpkgs.follows = "nixpkgs";
-		};
-		};
-
 
 	programs.hyprland = {
 	  enable = true;
