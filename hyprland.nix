@@ -152,7 +152,7 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating"
         #"$mainMod, R, exec, $menu"
-	"$mainMod, R, caelestia:lancher"
+	"$mainMod, R, caelestia:launcher"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
         "$mainMod, L, exec, hyprlock"
