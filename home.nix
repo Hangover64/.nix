@@ -148,6 +148,7 @@
 	  piper
 	  libratbag
 	  spicetify-cli
+	  foot
   ];
 
   fonts.fontconfig.enable = true;
