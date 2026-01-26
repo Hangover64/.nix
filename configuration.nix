@@ -54,7 +54,7 @@
 	  xwayland.enable = true;
 	};
 	programs.hyprlock.enable = true;
-	services.displayManager.ly.enable = true;
+	services.displayManager.cosmic-greeter.enable = true;
 	services.ratbagd.enable = true;
 
 
