@@ -3,68 +3,68 @@
 {
   home.username = "hendrikf";
   home.homeDirectory = "/home/hendrikf";
-  
-  
-  #dotfiles
+
+
+#dotfiles
   programs.bash = {
-  	enable = true;
-	  initExtra = ''
-		eval "$(starship init bash)"
-	'';
+    enable = true;
+    initExtra = ''
+      eval "$(starship init bash)"
+      '';
   };
 
   programs.alacritty = {
-  	enable = true;
-	};
+    enable = true;
+  };
 
   programs.neovim = {
-	  enable = true;
-	  viAlias = true;
-	  vimAlias = true;
-	  plugins = with pkgs.vimPlugins; [
-		  lazy-nvim
-		  lualine-nvim
-		  presence-nvim
-		];
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      lazy-nvim
+        lualine-nvim
+        presence-nvim
+    ];
   };
-  
-  
+
+
   programs.caelestia = {
-  enable = true;
-  systemd = {
-    enable = true; # if you prefer starting from your compositor
-    target = "graphical-session.target";
-    environment = [];
-  };
-  settings = {
-	bar = {
-		margins = 0;
-		padding = 0;
-		width = 10;
-		offset = 0;
-		status = {
-			showBattery = false;
-			};
-		};
+    enable = true;
+    systemd = {
+      enable = true; # if you prefer starting from your compositor
+        target = "graphical-session.target";
+      environment = [];
+    };
+    settings = {
+      bar = {
+        margins = 0;
+        padding = 0;
+        width = 10;
+        offset = 0;
+        status = {
+          showBattery = false;
+        };
+      };
       paths.wallpaperDir = "~/Pictures/Wallpapers";
       launcher.maxWallpapers = 9;
       theme = {
-      	scheme ="dynamic";
-	};
+        scheme ="dynamic";
+      };
     };
-  cli = {
-    enable = true; # Also add caelestia-cli to path
-    settings = {
-      theme.enableGtk = false;
+    cli = {
+      enable = true; # Also add caelestia-cli to path
+        settings = {
+          theme.enableGtk = false;
+        };
     };
   };
-};
 
 
 
 
 
-  #Programs dotfiles
+#Programs dotfiles
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
   xdg.configFile."alacritty".source = ./dotfiles/alacritty;
@@ -73,22 +73,22 @@
   xdg.configFile."fish".source = ./dotfiles/fish;
   xdg.configFile."swaync".source = ./dotfiles/swaync;
   xdg.configFile."yazi".source = ./dotfiles/yazi;
-  #hyprland
-  #xdg.configFile."hypr".source = ./dotfiles/hypr;
+#hyprland
+#xdg.configFile."hypr".source = ./dotfiles/hypr;
   xdg.configFile."wofi".source = ./dotfiles/wofi;
-  #xdg.configFile."quickshell".source = ./dotfiles/quickshell;
+#xdg.configFile."quickshell".source = ./dotfiles/quickshell;
 
-  #starship
+#starship
   programs.starship = {
-  	enable = true;
-	  settings = builtins.fromTOML (builtins.readFile ./dotfiles/starship/starship.toml);
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ./dotfiles/starship/starship.toml);
   };
 
   programs.git = {
-  	enable = true;
-	  settings.user.name = "Hangover64";
-	  settings.user.email = "hendrikfarnkopf@pm.me";
-	};
+    enable = true;
+    settings.user.name = "Hangover64";
+    settings.user.email = "hendrikfarnkopf@pm.me";
+  };
 #  programs.waybar = {
 # 	enable = true;
 #	  settings.main = {
@@ -120,47 +120,48 @@
 
   home.stateVersion = "25.11"; 
 
-  
+
 
   home.packages = with pkgs; [
-	  htop
-	  fastfetch
-	  okteta
-	  yazi
-	  ueberzugpp
-	  zed-editor
-	  kdePackages.okular
-	  kdePackages.dolphin
-	  obsidian
-	  spotify
-	  discord
-	  antigravity
-	  kdePackages.kwin
-	  kdePackages.spectacle
-	  tree
-	  nerd-fonts.jetbrains-mono
-	  btop
-	  dysk
-	  gnumake
-	  libreoffice
-	  pavucontrol
-	  networkmanagerapplet
-	  file
-	  imagemagick
-	  vivaldi
-	  coolercontrol.coolercontrold
-	  coolercontrol.coolercontrol-gui
-	  coolercontrol.coolercontrol-ui-data
-	  linuxKernel.packages.linux_zen.virtualbox
-	  tor-browser
-	  swaynotificationcenter
-	  playerctl
-	  piper
-	  libratbag
-	  spicetify-cli
-	  foot
-	  hyprpicker
-  ];
+    htop
+      fastfetch
+      okteta
+      yazi
+      ueberzugpp
+      zed-editor
+      kdePackages.okular
+      kdePackages.dolphin
+      obsidian
+      spotify
+      discord
+      antigravity
+      kdePackages.kwin
+      kdePackages.spectacle
+      tree
+      nerd-fonts.jetbrains-mono
+      btop
+      dysk
+      gnumake
+      libreoffice
+      pavucontrol
+      networkmanagerapplet
+      file
+      imagemagick
+      vivaldi
+      coolercontrol.coolercontrold
+      coolercontrol.coolercontrol-gui
+      coolercontrol.coolercontrol-ui-data
+      linuxKernel.packages.linux_zen.virtualbox
+      tor-browser
+      swaynotificationcenter
+      playerctl
+      piper
+      libratbag
+      spicetify-cli
+      foot
+      hyprpicker
+      python3
+      ];
 
   fonts.fontconfig.enable = true;
 
@@ -168,16 +169,16 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+# EDITOR = "emacs";
   };
 
   programs.home-manager.enable = true;
 
   imports = [
     ./modules/unfree.nix
-    inputs.caelestia-shell.homeManagerModules.default
-    ./hyprland.nix
-    ./hypr-extras.nix
-    ./wallpaper-rotator.nix
+      inputs.caelestia-shell.homeManagerModules.default
+      ./hyprland.nix
+      ./hypr-extras.nix
+      ./wallpaper-rotator.nix
   ];
 }
