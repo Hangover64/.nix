@@ -38,6 +38,7 @@
   settings = {
     bar.status = {
       showBattery = false;
+      paths.wallpaperDir = "$HOME/Pictures/Pics/16:9/";
     };
     paths.wallpaperDir = "~/Pictures/Pics/16:9";
   };
