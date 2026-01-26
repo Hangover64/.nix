@@ -146,6 +146,7 @@
 	  playerctl
 	  piper
 	  libratbag
+	  spicetify-cli
   ];
 
   fonts.fontconfig.enable = true;
