@@ -28,6 +28,31 @@
 		];
   };
 
+  programs.caelestia = {
+  enable = true;
+  systemd = {
+    enable = false; # if you prefer starting from your compositor
+    target = "graphical-session.target";
+    environment = [];
+  };
+  settings = {
+    bar.status = {
+      showBattery = false;
+    };
+    paths.wallpaperDir = "~/Pictures/Pics/16:9";
+  };
+  cli = {
+    enable = true; # Also add caelestia-cli to path
+    settings = {
+      theme.enableGtk = false;
+    };
+  };
+};
+
+
+
+
+
   #Programs dotfiles
   xdg.configFile."nvim".source = ./dotfiles/nvim;
   xdg.configFile."fastfetch".source = ./dotfiles/fastfetch;
