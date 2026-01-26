@@ -7,6 +7,7 @@ ShellRoot {
     // Top Bar
     PanelWindow {
         id: bar
+        implicitHeight: false
         
         anchors {
             top: true
@@ -64,8 +65,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.run("hyprctl", 
-                                    ["dispatch", "workspace", (index + 1).toString()])
+                                Quickshell.Process.run("bash", ["-c", "hyprctl dispatch workspace " + (index + 1)])
                             }
                         }
                     }
@@ -117,29 +117,30 @@ ShellRoot {
         }
     }
     
-    // Dock
+    // Dock - Links und transparent
     PanelWindow {
         id: dock
+        implicitHeight: false
         
         anchors {
             bottom: true
             left: true
-            right: true
         }
         
-        height: 90
+        width: 90
+        height: dockLayout.height + 20
+        
+        color: "transparent"  // Panel transparent
         
         Rectangle {
             id: dockContainer
             anchors.centerIn: parent
-            width: dockLayout.width + 20
-            height: 70
-            color: "#282a36"  // Dracula Background
+            width: 70
+            height: dockLayout.height + 20
+            color: "transparent"  // Hintergrund transparent
             radius: 16
-            border.color: "#6272a4"  // Dracula Comment
-            border.width: 1
             
-            RowLayout {
+            ColumnLayout {  // Vertikal statt horizontal
                 id: dockLayout
                 anchors.centerIn: parent
                 spacing: 10
@@ -159,7 +160,7 @@ ShellRoot {
                         color: dockMouse.containsMouse ? modelData.color : "#44475a"  // Dracula Current Line
                         
                         scale: dockMouse.containsMouse ? 1.5 : 1.0
-                        y: dockMouse.containsMouse ? -10 : 0
+                        x: dockMouse.containsMouse ? 10 : 0  // Nach rechts beim Hover
                         
                         Behavior on scale {
                             NumberAnimation {
@@ -168,7 +169,7 @@ ShellRoot {
                             }
                         }
                         
-                        Behavior on y {
+                        Behavior on x {
                             NumberAnimation {
                                 duration: 300
                                 easing.type: Easing.OutBack
@@ -196,7 +197,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.run(modelData.app, [])
+                                Quickshell.Process.run("bash", ["-c", modelData.app])
                             }
                         }
                     }
