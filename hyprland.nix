@@ -6,9 +6,6 @@
     
     settings = {
       # Source external monitor config
-      source = [
-        "~/.config/hypr/monitors.conf"
-      ];
       
       # Programs
       "$terminal" = "alacritty";
