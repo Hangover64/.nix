@@ -40,6 +40,8 @@
 	bar = {
 		margins = 0;
 		padding = 0;
+		width = 50;
+		offset = 0;
 		status = {
 			showBattery = false;
 			};
