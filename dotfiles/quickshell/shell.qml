@@ -15,7 +15,7 @@ ShellRoot {
             right: true
         }
         
-        height: 40
+        implicitHeight: 40
         
         Rectangle {
             anchors.fill: parent
@@ -38,7 +38,7 @@ ShellRoot {
 			radius: 8
 
 			property int workspaceId: index + 1
-			property bool isActive: Hyprland.focusedMonitor.activeWorkspace.id === workspaceId
+			property bool isActive: Hyprland.focusedMonitor ? (Hyprland.focusedMonitor.activeWorkspace ? Hyprland.focusedMonitor.activeWorkspace.id === workspaceId : false) : false
 
                         color: isActive ? "#bd93f9" : "#44475a"  // Dracula Purple / Current Line
                         
@@ -70,7 +70,7 @@ ShellRoot {
                             
 			    onClicked: {
 				var ws = index +1;
-                                Quickshell.Process.run("hyprctl", ["dispatch", "workspace", workspace.toString()]);
+                                Utils.run(["hyprctl", "dispatch", "workspace", (index + 1).toString()]);
                             }
                         }
                     }
@@ -83,8 +83,8 @@ ShellRoot {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: 10
-                width: 100
-                height: 30
+                implicitWidth: 100
+                implicitHeight: 30
                 radius: 8
                 color: "#44475a"  // Dracula Current Line
                 
@@ -139,8 +139,8 @@ ShellRoot {
         Rectangle {
             id: dockContainer
             anchors.centerIn: parent
-            width: 70
-            height: dockLayout.height + 20
+            implicitWidth: 70
+            implicitHeight: dockLayout.height + 20
             color: "transparent"  // Hintergrund transparent
             radius: 16
             
@@ -201,7 +201,7 @@ ShellRoot {
                             cursorShape: Qt.PointingHandCursor
                             
                             onClicked: {
-                                Quickshell.Process.run(modelData.app, []);
+                                Utils.run([modelData.app,]);
                             }
                         }
                     }
