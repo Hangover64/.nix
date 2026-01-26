@@ -151,6 +151,7 @@
 		waypaper
 		ffmpeg
 		rocmPackages.rocm-smi
+		flameshot
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
