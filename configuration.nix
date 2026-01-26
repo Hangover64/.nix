@@ -48,6 +48,11 @@
 		  LC_TIME = "de_DE.UTF-8";
 		};
 	};
+	caelestia-cli = {
+		url = "github:caelestia-dots/cli",
+		inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 
 	programs.hyprland = {
 	  enable = true;
@@ -155,6 +160,15 @@
 		nmgui
 		cava
 		quickshell
+
+		#celestia
+		swappy
+		grim
+		dart-sass
+		app2unit
+		glib2
+		cliphist
+		fuzzel
 
 		#screenshot shit
 		flameshot
