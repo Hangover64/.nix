@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "hendrikf";
@@ -161,5 +161,6 @@
 
   imports = [
     ./modules/unfree.nix
+    inputs.caelestia-shell.homeManagerModules.default
   ];
 }
