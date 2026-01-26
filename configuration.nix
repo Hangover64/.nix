@@ -151,12 +151,23 @@
 		waypaper
 		ffmpeg
 		rocmPackages.rocm-smi
+		claude-code
+
+		#screenshot shit
 		flameshot
+		grim
+		slurp
+		wl-clipboard
+		swappy
+		libnotify
 	];
 	fonts.packages = with pkgs; [
 		jetbrains-mono
 		nerd-fonts.jetbrains-mono
 	];
+	environment.variables = { 
+		HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
+		};
 
 	system.stateVersion = "25.11"; 
 
