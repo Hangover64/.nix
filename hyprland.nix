@@ -17,6 +17,7 @@
       exec-once = [
         "hyprlock & caelestia-shell & hypridle"
         "hyprpaper & swaync"
+        "sleep 5m & ./wallpaper.sh"
       ];
       
       # Environment variables

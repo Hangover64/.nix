@@ -179,6 +179,5 @@
       inputs.caelestia-shell.homeManagerModules.default
       ./hyprland.nix
       ./hypr-extras.nix
-      ./wallpaper-rotator.nix
   ];
 }
