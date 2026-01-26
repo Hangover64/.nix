@@ -128,6 +128,12 @@ ShellRoot {
     PanelWindow {
 	    id: dock
 	    exclusionMode: ExclusionMode.Auto
+
+
+	margins { 
+		left: 5
+		right: 5
+	}
         	
         anchors {
 		left: true
