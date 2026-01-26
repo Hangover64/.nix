@@ -40,9 +40,10 @@
 	bar = {
 		margins = 0;
 		padding = 0;
-	};
-    bar.status = {
-      showBattery = false;
+		status = {
+			showBattery = false;
+			};
+		};
       paths.wallpaperDir = "~/Pictures/Wallpapers";
       launcher.maxWallpapers = 9;
       theme = {
