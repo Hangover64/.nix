@@ -1,4 +1,4 @@
-{ config, pkgs, ...}
+{ config, pkgs, ...}:
 {
 systemd.user.services.wallpaper-rotation = {
 	Unit = {
